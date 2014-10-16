@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Post do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+	subject { described_class.new }
+
+	it { should respond_to(:annotations)}
+  
 end
