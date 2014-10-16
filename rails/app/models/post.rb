@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
+  has_many :annotations
 
 
 end
