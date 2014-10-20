@@ -21,3 +21,27 @@
 	right: 20px;
 	top: 20px;
 }
+
+.copyable {
+	background-image: url(http://uxrepo.com/static/icon-sets/ionicons/svg/clipboard.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.copyable-text {
+	height: 30px;
+	width: 30px;
+	-webkit-transition: background-color 200ms;
+    transition: background-color 200ms;
+	&.zeroclipboard-is-hover {
+		background-color: darken(white, 10%);
+		cursor: pointer;
+	}
+	&.just-coppied {
+		-webkit-transition: background-color 200ms;
+	    transition: background-color 200ms;
+		background-color: lighten($success, 20%);
+	}
+}
+
+

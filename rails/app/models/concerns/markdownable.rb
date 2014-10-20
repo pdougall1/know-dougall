@@ -1,8 +1,8 @@
 module Markdownable
 	extend ActiveSupport::Concern
 
-	def format
-		self.formatted_entry = markdown entry
+	def format(text)
+		self.formatted_entry = markdown(text)
 	end
 
   def markdown(text)

@@ -7,17 +7,18 @@ class Api::AnnotationsController < ApplicationController
 
 	def create
 		annotation = Annotation.new annotation_params
-		annotation.format
 		annotation.save
 		render json: { annotation: annotation }
 	end
 
 	def update
-		annotation = Annotation.find params[:id]
-		annotation.update_attributes(annotation_params)
-		annotation.format
-		annotation.save
-		render json: { annotation: annotation }
+		@annotation = Annotation.find params[:id]
+		@annotation.update_attributes(annotation_params)
+		if @annotation.save
+			head :ok
+		else
+			head :bad_request
+		end
 	end
 
 	def destroy
@@ -27,8 +28,8 @@ class Api::AnnotationsController < ApplicationController
 
 	private
 
-def annotation_params
-  params.require(:annotation).permit(:body, :created_at)
-end
+	def annotation_params
+	  params.require(:annotation).permit(:entry, :created_at, :post_id, :name)
+	end
 
 end

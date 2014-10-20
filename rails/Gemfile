@@ -37,3 +37,4 @@ gem 'pdfkit'
 gem 'rails_12factor', group: :production
 gem 'wkhtmltopdf-binary'
 gem 'rack-cors'
+gem 'active_model_serializers'

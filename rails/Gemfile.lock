@@ -162,6 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   dotenv-rails
   ember-rails
   factory_girl_rails (~> 4.0)
